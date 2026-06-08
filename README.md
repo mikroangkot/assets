@@ -1,6 +1,6 @@
 # Assets
-## Source Mikro Monitor.apk
+## Source Build APK
 
 ## Template variable
-* `mikromonitor` - project identifier
+* `mikroangkot` - project identifier
 * `https://cdn.jsdelivr.net/gh/mikroangkot/assets/` - cdn for image, font, and other source
