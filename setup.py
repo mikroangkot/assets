@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-  name="dataformatter",
+  name="helpers",
   version="0.1",
   packages=find_packagees()
 )
