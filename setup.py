@@ -3,5 +3,8 @@ from setuptools import setup, find_packages
 setup(
   name="helpers",
   version="0.1",
-  packages=find_packagees()
+  packages=find_packagees(),
+  install_requires=[
+    "flet"
+  ]
 )
