@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-  name="helpers",
+  name="mikrohelpers",
   version="0.1",
-  packages=find_packagees(),
+  packages=find_packages(),
   install_requires=[
     "flet"
   ]
