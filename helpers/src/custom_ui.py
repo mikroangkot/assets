@@ -5,7 +5,7 @@ class FormatUI:
   @staticmethod
   def show_snackbar(page, message: str, warna: str):
     color_value = getattr(ft.Colors, warna, ft.Colors.YELLOW_900)
-    snak_bar = ft.SnackBar(
+    snack_bar = ft.SnackBar(
       content = ft.Text(
         message,
         color = ft.Colors.WHITE,
