@@ -4,7 +4,14 @@ from cryptography.fernet import Fernet
 
 load_dotenv()
 
-class DecryptENV:
+class DecryptData:
+  
+  @staticmethod
+  def password_bcrypt(password: str) -> str:
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed.decode('utf-8)
+    
   @staticmethod
   def env_data(var_name: str) -> str:
     try:
