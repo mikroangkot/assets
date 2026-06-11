@@ -7,6 +7,6 @@ class DataFormatter(
   FormatDatetime,
   FormatDispatch,
   FormatUI,
-  DecryptENV
+  DecryptData
 ):
   pass
