@@ -2,10 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
   name="mikrohelpers",
-  version="0.3",
+  version="0.4",
   packages=find_packages(),
   install_requires=[
-    "flet"
+    "flet",
+    "python-dotenv",
+    "cryptography"
   ],
   description="Package helpers to Mikro Monitor apk",
   url="https://github.com/mikroangkot/assets",
