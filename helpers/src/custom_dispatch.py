@@ -17,11 +17,13 @@ class FormatDispatch:
 
   @staticmethod
   def format_rute(teks_koridor):
-    if not teks_koridor:
-      return "-"
+    bersih = str(teks).upper()
+    bersih = re.sub(r"[^A-Z0-9]", "", bersih)
+    match = re.match(r"^([A-Z]+)(\d+)$", bersih)
 
-    koridor = str(teks_koridor).upper()
-    koridor = koridor.replace(" ", "").replace("JAK", "JAK.")
-    koridor = koridor.replace("..", ".")
-    hasil = re.sub(r"JAK\.(\d)(?!\d)", r"JAK.0\1", koridor)
-    return hasil
+    if match:
+      huruf = match.group(1)
+      angka = int(match.group(2))
+      return f"{huruf}{angka}"
+      
+    return teks
