@@ -4,7 +4,8 @@ class FormatDispatch:
 
   @staticmethod
   def format_bus(teks):
-    bersih = teks.upper().replace(" ", "").replace("-", "")
+    bersih = str(teks).upper()
+    bersih = re.sub(r"[^A-Z0-9]", "", bersih)
     match = re.match(r"^([A-Z]+)(\d+)$", bersih)
 
     if match:
