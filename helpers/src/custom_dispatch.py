@@ -16,7 +16,7 @@ class FormatDispatch:
     return teks
 
   @staticmethod
-  def format_rute(teks_koridor):
+  def format_rute(teks):
     bersih = str(teks).upper()
     bersih = re.sub(r"[^A-Z0-9]", "", bersih)
     match = re.match(r"^([A-Z]+)(\d+)$", bersih)
