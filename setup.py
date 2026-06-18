@@ -7,9 +7,9 @@ setup(
   url="https://github.com/mikroangkot/assets",
   author="RumahDjigo",
   author_email="rumahdjigo@gmail.com",
-  license="MIT"
-  packages=find_packages(where="src"),
+  license="MIT",
   packages_dir={"": "src"},
+  packages=find_packages(where="src"),
   install_requires=[
     "flet",
     "bcrypt",
