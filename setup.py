@@ -14,6 +14,8 @@ setup(
     "flet",
     "bcrypt",
     "python-dotenv",
-    "cryptography"
+    "cryptography",
+    "openpyxl",
+    "pymysql"
   ]
 )
