@@ -16,6 +16,7 @@ setup(
     "python-dotenv",
     "cryptography",
     "openpyxl",
-    "pymysql"
+    "pymysql",
+    "black"
   ]
 )
