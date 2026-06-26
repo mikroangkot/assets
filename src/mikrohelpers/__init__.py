@@ -8,6 +8,7 @@ class DataFormatter(
   FormatDatetime,
   FormatDispatch,
   FormatUI,
-  DecryptData
+  DecryptData,
+  DataLog
 ):
   pass
