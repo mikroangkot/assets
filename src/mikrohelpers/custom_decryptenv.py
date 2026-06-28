@@ -6,6 +6,13 @@ from cryptography.fernet import Fernet
 load_dotenv()
 
 class DecryptData:
+
+  _fernet_instance = None
+
+  @staticmethod
+  def initialize_crypto(key: str):
+    if key:
+      DecryptData._fernet_instance = Fernet(key.encode("utf-8"))
   
   @staticmethod
   def password_bcrypt(password: str) -> str:
@@ -17,13 +24,14 @@ class DecryptData:
   def env_data(var_name: str) -> str:
     try:
       encrypted_data = os.getenv(var_name)
-      crypto_key = os.getenv("CRYPTO_KEY")
 
-      if not encrypted_data or not crypto_key:
+      if not encrypted_data:
         return None
 
-      f = Fernet(crypto_key.encode())
-      return f.decrypt(encrypted_data.encode()).decode()
+      if DecryptData._fernet_instance:
+        return DecryptData._fernet_instance.decrypt(encrypted_data.encode()).decode()
+
+      return None
 
     except Exception as err:
       return None
