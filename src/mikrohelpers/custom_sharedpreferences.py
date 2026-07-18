@@ -16,3 +16,6 @@ class AppStorage:
       except Exception:
         return None
     return None
+
+  async def remove(self, key: str):
+    await self.sp.remove(key)
