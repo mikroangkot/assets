@@ -3,12 +3,19 @@ import bcrypt
 from dotenv import load_dotenv
 from cryptography.fernet import Fernet
 
+current_dir = os.getcwd()
+env_at_root = os.path.join(current_dir, ".env")
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+env_relative_root = os.path.abspath(os.path.join(script_dir, "..", "..", ".env"))
+
 try:
-  env_file = os.path.join(os.getcwd(), ".env")
   if os.path.exists(env_file):
-    load_dotenv(dotenv_path=env_file)
+    load_dotenv(dotenv_path=env_at_root, override=True)
+  elif os.path.exists(env_relative_root):
+    load_dotenv(dotenv_path=env_relative_root, override=True)
   else:
-    load_dotenv(dotenv_path=".env")
+    load_dotenv(dotenv_path=".env", override=True)
 except Exception:
   pass
 
