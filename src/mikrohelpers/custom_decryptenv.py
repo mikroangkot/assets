@@ -3,7 +3,14 @@ import bcrypt
 from dotenv import load_dotenv
 from cryptography.fernet import Fernet
 
-load_dotenv()
+try:
+  env_file = os.path.join(os.getcwd(), ".env")
+  if os.path.exists(env_file):
+    load_dotenv(dotenv_path=env_file)
+  else:
+    load_dotenv(dotenv_path=".env")
+except Exception:
+  pass
 
 class DecryptData:
 
