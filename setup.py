@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
   name="mikrohelpers",
-  version="1.1.0",
+  version="1.1.1",
   description="Package helpers to format intern data",
   url="https://github.com/mikroangkot/assets",
   author="RumahDjigo",
